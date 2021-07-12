@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './components/Header'
 
-import backgroudImg from './assets/backgroud.jfif'
+import api from './services/api'
 
 import './styles/style.css'
 
@@ -11,13 +11,17 @@ export default function App() {
   function novoProjeto() {
     //projects.push(`projet ${Date.now()}`)
     setProjects([...projects, `Project ${Date.now()}`])
-    console.log(projects)
+
+    useEffect(() => {
+      api.get('projects').then(response => {
+        console.log(response)
+      })
+    }, [])
   }
 
   return (
     <>
       <Header title="Projects">
-        <img className="img" src={backgroudImg} alt="imagem de um lugar" />
         <ul>
           {projects.map(project => (
             <li key={project}>{project}</li>
