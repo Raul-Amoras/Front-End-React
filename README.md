@@ -29,4 +29,4 @@ O app estará disponível no seu browser pelo endereço http://localhost:8080/.
 
 ## 💻 Projeto
 
-Front-End-React é apenas um projeto contendo os principais fundamentos utilizados no react com componetização, propriedades, estado e imutabilidade.
+Front-End-React é apenas um projeto contendo os principais fundamentos utilizados no react como componetização, propriedades, estado e imutabilidade.
