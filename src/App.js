@@ -6,17 +6,17 @@ import api from './services/api'
 import './styles/style.css'
 
 export default function App() {
-  const [projects, setProjects] = useState(['HTML', 'CSS'])
+  const [projects, setProjects] = useState([])
+
+  useEffect(() => {
+    api.get('projects').then(response => {
+      setProjects(response.data)
+    })
+  }, [])
 
   function novoProjeto() {
     //projects.push(`projet ${Date.now()}`)
     setProjects([...projects, `Project ${Date.now()}`])
-
-    useEffect(() => {
-      api.get('projects').then(response => {
-        console.log(response)
-      })
-    }, [])
   }
 
   return (
@@ -24,7 +24,7 @@ export default function App() {
       <Header title="Projects">
         <ul>
           {projects.map(project => (
-            <li key={project}>{project}</li>
+            <li key={project.id}>{project.nome}</li>
           ))}
         </ul>
         <button onClick={novoProjeto}>Novo Projeto</button>
