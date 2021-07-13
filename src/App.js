@@ -43,12 +43,19 @@ export default function App() {
 
   return (
     <>
-      <Header title="Projects">
-        <ul>
+      <Header title="Cadastro">
+        
           {projects.map(project => (
-            <li key={project.id}>{project.nome}</li>
+            <ul key={project.id}>
+              <li>{project.nome}</li>
+              <li>{project.nomeFantasia}</li>
+              <li>{project.tipoPessoa}</li>
+              <li>{project.tipoCliente}</li>
+              <li></li>
+              <li></li>
+            </ul>
           ))}
-        </ul>
+        
         <button onClick={novoProjeto}>Novo Projeto</button>
       </Header>
     </>
