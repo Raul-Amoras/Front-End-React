@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Header from './components/Header'
+import FormRegister from './components/FormRegister'
 
 import api from './services/api'
 
@@ -43,9 +44,8 @@ export default function App() {
 
   return (
     <>
-      <Header title="Cadastro">
-        
-          {projects.map(project => (
+      <Header >
+        {/* {projects.map(project => (
             <ul key={project.id}>
               <li>{project.nome}</li>
               <li>{project.nomeFantasia}</li>
@@ -56,8 +56,11 @@ export default function App() {
             </ul>
           ))}
         
-        <button onClick={novoProjeto}>Novo Projeto</button>
+        <button onClick={novoProjeto}>Novo Projeto</button> */}
       </Header>
+      <FormRegister title="Cadastro">
+
+      </FormRegister>
     </>
   )
 }
